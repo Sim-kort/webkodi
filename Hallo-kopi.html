@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en"> <!--Betyr hvilket språk html siden er på så i dette tilfellet, engelsk.-->
+<head>
+    <meta charset="UTF-8"> <!--dette betyr at siden er mottakelig for æ, ø, å!-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Webutvikling</title>
+    <style>
+        /* Når jeg skal style siden min så bruker jeg CSS!*/
+        body {
+            background-color:#000000
+
+        }
+    h1 {
+        font-family:'Times New Roman', Times, serif;
+        color: #FFFFFF;
+        margin: 0 auto;
+        text-align: center;
+        line-height: 2.0;
+    }
+            
+    h2 {
+        font-family: 'Times New Roman', Times, serif;
+        color:  #FFFFFF;
+        margin: 0 auto;
+        text-align: center;
+        line-height: 2.0;
+    }
+    P {
+        font-family: 'Times New Roman', Times, serif;
+        color:  #FFFFFF;
+        margin: 0 auto;
+        text-align: center;
+        line-height: 3.5;
+    }
+    img {
+        width: 500px;
+        height:500px;
+        border: 5px solid #FFFFFF;
+        border-radius: 200px; /* Dette viser bare at bilde har en border rundt seg jo mindre verdi jo rundere blir den*/
+        display: block;
+        margin: 0 auto;
+    }
+    button{
+        Background-color: #FFFFFF;
+        color: #000000;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 8px;
+        cursor: pointer;
+        font-size: 12px;
+        font-family:Georgia, 'Times New Roman', Times, serif;
+        position: fixed; /*viser hvor kanppen skal festes*/
+        bottom: 20px;
+        left: 20px;
+        /*text-align: center; hvordan få knappen flyttet til forskjellige hjørner av nettsiden?*/
+    }
+    /*.bildecontainer {
+        display: inline-block;
+        border-left: 30px solid #FFFFFF;
+        border-right: 30px solid #FFFFFF;
+        padding: 20px;
+    } */ /*Fjernet fordi jeg likte det ikke samt at bildet ble skjøvet ilbake til venstre*/
+    </style>
+ <!--når jeg skal skrive inn i head og body bruker jueg html!-->
+</head>
+<body>
+    <h1>Hallo Simen!</h1>
+    <h2>Første webside</h2>
+    <p>HTML OG CSS</p>
+    <div class="bildecontainer">
+        <img src="Mitt Bilde 2.jpeg" alt="bildet er av dj Snoopy!" width="500" height="500">
+    </div>
+    <button id="confettibutton">TRYKK HER!</button>
+    <div id="confetti"></div>
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.5.1/dist/confetti.browser.min.js"></script>
+    <script>
+        function shootconfetti() {
+            confetti({
+                particleCount: 100,
+                spread: 70,
+                origin: { y: 0.7 }
+            })
+        }
+        document.getElementById('confettibutton').addEventListener('click', shootconfetti);
+        </script>
+</body>
+</html>
